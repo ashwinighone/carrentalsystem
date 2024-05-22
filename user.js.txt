@@ -1,0 +1,37 @@
+// models/user.js
+module.exports = (sequelize) => {
+  const User = sequelize.define('User', {
+    name: Sequelize.STRING,
+    email: Sequelize.STRING,
+    password: Sequelize.STRING,
+    role: Sequelize.STRING,
+  });
+
+  return User;
+};
+
+// models/car.js
+module.exports = (sequelize) => {
+  const Car = sequelize.define('Car', {
+    make: Sequelize.STRING,
+    model: Sequelize.STRING,
+    year: Sequelize.INTEGER,
+    availability: Sequelize.BOOLEAN,
+    price_per_day: Sequelize.FLOAT,
+  });
+
+  return Car;
+};
+
+// models/booking.js
+module.exports = (sequelize) => {
+  const Booking = sequelize.define('Booking', {
+    user_id: Sequelize.INTEGER,
+    car_id: Sequelize.INTEGER,
+    start_date: Sequelize.DATE,
+    end_date: Sequelize.DATE,
+    status: Sequelize.STRING,
+  });
+
+  return Booking;
+};

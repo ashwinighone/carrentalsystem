@@ -1,0 +1,10 @@
+
+const { Sequelize } = require('sequelize');
+
+const sequelize = new Sequelize('postgres://username:password@localhost:5432/car_rental');
+
+const User = require('./user')(sequelize);
+const Car = require('./car')(sequelize);
+const Booking = require('./booking')(sequelize);
+
+module.exports = { sequelize, User, Car, Booking };
